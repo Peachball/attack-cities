@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Map;
 
 public class City {
@@ -5,6 +6,9 @@ public class City {
 		public int troopsStationed;
 		private Player owner;
 		private String upgrade; //"none", "fort", factory", "artillery"
+		private Map<City, List<Road>> shortestPaths;
+		public String cityName;
+		private final int cityIndex;
 		
 		public City() {
 			
@@ -30,5 +34,30 @@ public class City {
 		//when conquered, change the owner
 		private void changeOwner(Player attacker) {
 			owner = attacker;
+		}
+		
+		@Override
+		public boolean equals(Object o)
+		{
+			if(!(o instanceof City)) {
+				return false;
+			}
+			City c = (City) o;
+			if(c)
+		}
+		
+		@Override
+		public int hashCode()
+		{
+			
+		}
+		
+		public Road[] getConnections()
+		{
+			return connections;
+		}
+		public int getIndex()
+		{
+			return cityIndex;
 		}
 	}
