@@ -1,4 +1,4 @@
-
+package logic;
 public class Road {
 	
 	private final int roadLength;

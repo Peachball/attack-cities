@@ -1,7 +1,12 @@
+package logic;
 import java.util.List;
 import java.util.Map;
 
 public class City {
+	
+		public int x;
+		public int y;
+		
 		private Road[] connections;
 		public int troopsStationed;
 		private Player owner;
@@ -10,8 +15,10 @@ public class City {
 		public String cityName;
 		private final int cityIndex;
 		
-		public City() {
-			
+		public boolean isAttacked;
+		
+		public City(int cityIndex, int x, int y) {
+			this.cityIndex = cityIndex;
 		}
 		
 		//this logic will be hard
@@ -36,6 +43,7 @@ public class City {
 			owner = attacker;
 		}
 		
+		/*
 		@Override
 		public boolean equals(Object o)
 		{
@@ -51,6 +59,7 @@ public class City {
 		{
 			
 		}
+		*/
 		
 		public Road[] getConnections()
 		{

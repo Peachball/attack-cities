@@ -1,3 +1,4 @@
+package logic;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -10,8 +11,9 @@ import java.util.Set;
 public class MapLogic {
 	
 	//each node is a city
-	static City [] cities;
-	
+	public static City [] cities;
+	public static Road [] roads;
+	public ArrayList<>
 	//what am i doing
 	
 	//will have to implement dijkstra sometime

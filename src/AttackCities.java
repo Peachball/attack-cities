@@ -4,30 +4,19 @@ import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.state.StateBasedGame;
 
-public class AttackCities extends BasicGame
+import states.MainMenu;
+
+import org.newdawn.slick.state.BasicGameState;
+
+public class AttackCities extends StateBasedGame
 {
 	public AttackCities() {
 		super("attack cities");
 	}
 
-	@Override
-	public void render(GameContainer arg0, Graphics arg1) throws SlickException {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void init(GameContainer arg0) throws SlickException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update(GameContainer arg0, int arg1) throws SlickException {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	public static void main(String[] args)
 	{
@@ -35,12 +24,22 @@ public class AttackCities extends BasicGame
 		{
 			AppGameContainer app = new AppGameContainer(new AttackCities());
 			app.setDisplayMode(500, 400, false);
+			app.setShowFPS(false);
+			//app.setAlwaysRender(true);
 			app.start();
 		}
 		catch (SlickException e)
 		{
 			e.printStackTrace();
 		}
+	}
+
+
+
+	@Override
+	public void initStatesList(GameContainer container) throws SlickException {
+		this.addState(new MainMenu());
+		
 	}
 	
 }
