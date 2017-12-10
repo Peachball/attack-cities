@@ -1,5 +1,5 @@
 package maps;
 
-public class duel {
+public class Duel {
 
 }

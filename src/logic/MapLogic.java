@@ -8,22 +8,21 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-public class MapLogic {
-	
+public class MapLogic
+{
 	//each node is a city
 	public static City [] cities;
 	public static Road [] roads;
-	public ArrayList<>
 	//what am i doing
 	
 	//will have to implement dijkstra sometime
-	
-	
-	public MapLogic(String mapName) {
+	public MapLogic(String mapName)
+	{
 		cities = new City [0];
 	}
 	
-	private static Map<City, List<Road>> Dijkstra(City start) {
+	private static Map<City, List<Road>> Dijkstra(City start)
+	{
 		PriorityQueue<Road> pq = new PriorityQueue<Road>(
 			new Comparator<Road>() {
 				@Override
@@ -78,11 +77,9 @@ public class MapLogic {
 			dists.put(curr, r.getLength());
 			List<Road> prevPath = ret.get(prev);
 			visited.add(curr.getIndex());
-			
 		}
 		return ret;
 		
 	}
-	
 	
 }

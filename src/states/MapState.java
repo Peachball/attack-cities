@@ -11,13 +11,15 @@ import logic.MapLogic;
 import logic.Road;
 import logic.City;
 
-public class MapState extends BasicGameState{
-
+public class MapState extends BasicGameState
+{
 	private MapLogic map;
 	private Rectangle[] cityShapes;
 	private Line[] roadShapes;
+
 	@Override
-	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
+	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException
+	{
 		map = new MapLogic("duel");
 		cityShapes = new Rectangle[map.cities.length];
 		roadShapes = new Line[map.roads.length];
@@ -36,7 +38,8 @@ public class MapState extends BasicGameState{
 	}
 	
 	@Override
-	public void render(GameContainer arg0, StateBasedGame arg1, Graphics g) throws SlickException {
+	public void render(GameContainer arg0, StateBasedGame arg1, Graphics g) throws SlickException
+	{
 		for (Rectangle r : cityShapes)
 		{
 			g.fill(r);
@@ -50,19 +53,20 @@ public class MapState extends BasicGameState{
 			if(c.isAttacked)
 			{
 				//find some way around this
-				g.drawString(c.troopsStationed, c.x, c.y - 10);
+				g.drawString("" + c.troopsStationed, c.x, c.y - 10);
 			}
 		}
 	}
 
 	@Override
-	public void update(GameContainer arg0, StateBasedGame arg1, int delta) throws SlickException {
+	public void update(GameContainer arg0, StateBasedGame arg1, int delta) throws SlickException
+	{
 		
 	}
 
 	@Override
-	public int getID() {
+	public int getID()
+	{
 		return 0;
 	}
-
 }

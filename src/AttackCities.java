@@ -12,11 +12,17 @@ import org.newdawn.slick.state.BasicGameState;
 
 public class AttackCities extends StateBasedGame
 {
-	public AttackCities() {
+	public AttackCities()
+	{
 		super("attack cities");
 	}
-
-
+	
+	@Override
+	public void initStatesList(GameContainer container) throws SlickException
+	{
+		this.addState(new MainMenu());
+		
+	}
 	
 	public static void main(String[] args)
 	{
@@ -25,7 +31,6 @@ public class AttackCities extends StateBasedGame
 			AppGameContainer app = new AppGameContainer(new AttackCities());
 			app.setDisplayMode(500, 400, false);
 			app.setShowFPS(false);
-			//app.setAlwaysRender(true);
 			app.start();
 		}
 		catch (SlickException e)
@@ -33,13 +38,4 @@ public class AttackCities extends StateBasedGame
 			e.printStackTrace();
 		}
 	}
-
-
-
-	@Override
-	public void initStatesList(GameContainer container) throws SlickException {
-		this.addState(new MainMenu());
-		
-	}
-	
 }

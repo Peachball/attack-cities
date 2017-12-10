@@ -1,6 +1,7 @@
 package logic;
-public class Road {
-	
+
+public class Road
+{
 	private final int roadLength;
 	public final City city1;
 	public final City city2;
